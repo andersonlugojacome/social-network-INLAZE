@@ -1,0 +1,19 @@
+<nav class="bg-white shadow-md px-4 py-2 flex justify-between">
+    <a href="#" class="text-xl font-bold">social Network INLAZE</a>
+    <ul class="flex space-x-4">
+      <li><a href="/wall" routerLinkActive="active" class="text-gray-600 hover:text-gray-700">Muro</a></li>
+      <li><a routerLink="/login" routerLinkActive="active" class="text-gray-600 hover:text-gray-700">
+        <!-- Valido que este iniciado session sino pongo login, y registro, si esta iniicado pongo su nombre todo en angular -->
+        <!-- {{isLogged ? user.name : 'Login'}} -->
+
+    
+
+
+      </a></li>
+      
+        <li><a href="/login" class="text-gray-600 hover:text-gray-700">Login</a></li>
+
+      <li><a href="/account" routerLinkActive="active" class="text-gray-600 hover:text-gray-700">Editar perfil</a></li>
+      <li><a href="/Posts/create" class="text-gray-600 hover:text-gray-700">Crear Post</a></li>
+    </ul>
+  </nav>
