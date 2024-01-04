@@ -1,15 +1,22 @@
 <!-- Navbar Container -->
-<nav class="bg-gray-800 p-2 mt-0 fixed w-full z-10 top-0">
-    <div class="container mx-auto flex flex-wrap items-center">
+<nav class="bg-gray-800 p-2 mt-0 flex w-full z-10 top-0">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
       <!-- Logo or Brand Name -->
-      <div class="flex w-1/2 justify-start text-white font-extrabold">
+      <div class="flex justify-start text-white font-extrabold">
         <a class="text-white no-underline hover:text-white hover:no-underline" routerLink="/">
           <span class="text-2xl pl-2"><i class="em em-grinning"></i> Social Network - INLAZE</span>
         </a>
       </div>
   
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden">
+        <button id="navbar-toggle" class="text-white focus:outline-none">
+          <i class="fas fa-bars"></i> Mobile Menu =
+        </button>
+      </div>
+  
       <!-- Navbar Links -->
-      <div class="flex w-1/2 justify-end content-center">      
+      <div class="hidden md:flex flex-grow justify-end md:w-auto">
         <a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline px-4" routerLink="/">Inicio</a>
         <a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline px-4" routerLink="/posts">Muro</a>
         <a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline px-4" routerLink="/posts/add">Crear Post</a>
@@ -17,4 +24,12 @@
       </div>
     </div>
   </nav>
+  
+  <!-- JavaScript para toggle del menú en móviles -->
+  <script>
+    document.getElementById('navbar-toggle').addEventListener('click', function () {
+      const navLinks = document.querySelector('.md\\:flex');
+      navLinks.classList.toggle('hidden');
+    });
+  </script>
   
