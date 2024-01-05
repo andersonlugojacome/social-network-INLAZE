@@ -10,7 +10,6 @@ import { Posts } from '../../interfaces/posts';
 export class PostsComponent implements OnInit {
 
   posts: Posts[] = [];
-
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {

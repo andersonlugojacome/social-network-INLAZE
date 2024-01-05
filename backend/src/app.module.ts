@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from './product/product.module';
 import { UsersModule } from './users/users.module';
-import { AuthController } from './auth/auth.controller';
-import { AuthModule } from './auth/auth.module';
+
 import { PostsModule } from './posts/posts.module';
+import { JwtModule } from '@nestjs/jwt';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -19,10 +20,12 @@ import { PostsModule } from './posts/posts.module';
     }),
     ProductModule,
     UsersModule,
-    AuthModule,
+
     PostsModule,
+
+    AuthModule
   ],
-  controllers: [AppController, AuthController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}

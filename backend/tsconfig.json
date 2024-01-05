@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "outDir": "./dist2",
+    "outDir": "./dist",
     "baseUrl": "./"
   },
   "exclude": ["node_modules"]

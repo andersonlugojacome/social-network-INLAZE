@@ -1,0 +1,39 @@
+<p>users-form works!</p>
+
+<div class="p-4">
+  <!-- lo hago en una tarjeta card con tailwind -->
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+
+    <h2 class="text-2xl font-bold mb-4">Registro de Usuario</h2>
+    <p class="text-gray-700 text-sm mb-4">Por favor, ingrese sus datos para registrarse.</p>
+    
+    <div class="mb-4 text-gray-700 text-sm">
+     
+      
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre completo:</label>
+        <input type="text" id="fullName" name="fullName" [(ngModel)]="user.fullName"
+          class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="mb-4">
+        <label for="age" class="block text-sm font-medium text-gray-700">Edad:</label>
+        <input type="number" id="age" name="age" [(ngModel)]="user.age" class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" class="w-full p-2 border rounded-md"
+          required>
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password"
+          class="w-full p-2 border rounded-md" required>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Registrar</button>
+    </form>
+  </div>
+</div>
+</div>
