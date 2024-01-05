@@ -31,7 +31,7 @@ export class PostsService {
 
     // Delete Posts
     async deletePosts(postsID: string): Promise<any> {
-        const deletedPosts = await this.PostsModel.findOneAndDelete({ _id: postsID});
+        const deletedPosts = await this.PostsModel.findByIdAndDelete({ _id: postsID});
         return deletedPosts;
     }
 

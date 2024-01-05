@@ -49,7 +49,7 @@ let ProductService = class ProductService {
     }
     deleteProduct(productID) {
         return __awaiter(this, void 0, void 0, function* () {
-            const deletedProduct = yield this.productModel.findOneAndDelete({ _id: productID });
+            const deletedProduct = yield this.productModel.findByIdAndDelete({ _id: productID });
             return deletedProduct;
         });
     }

@@ -49,7 +49,7 @@ let UsersService = class UsersService {
     }
     deleteUsers(usersID) {
         return __awaiter(this, void 0, void 0, function* () {
-            const deletedUsers = yield this.UsersModel.findOneAndDelete({ _id: usersID });
+            const deletedUsers = yield this.UsersModel.findByIdAndDelete({ _id: usersID });
             return deletedUsers;
         });
     }

@@ -49,7 +49,7 @@ let PostsService = class PostsService {
     }
     deletePosts(postsID) {
         return __awaiter(this, void 0, void 0, function* () {
-            const deletedPosts = yield this.PostsModel.findOneAndDelete({ _id: postsID });
+            const deletedPosts = yield this.PostsModel.findByIdAndDelete({ _id: postsID });
             return deletedPosts;
         });
     }

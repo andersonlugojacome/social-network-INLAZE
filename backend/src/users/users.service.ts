@@ -31,7 +31,7 @@ export class UsersService {
 
     // Delete Users
     async deleteUsers(usersID: string): Promise<any> {
-        const deletedUsers = await this.UsersModel.findOneAndDelete({ _id: usersID });
+        const deletedUsers = await this.UsersModel.findByIdAndDelete({ _id: usersID });
         return deletedUsers;
     }
 
