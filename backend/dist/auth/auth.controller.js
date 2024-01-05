@@ -32,14 +32,21 @@ let AuthController = class AuthController {
     register(registerDTO) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.authService.register(registerDTO);
-            return { user,
-                message: 'User has been created successfully', };
+            return {
+                user,
+                message: 'User has been created successfully',
+            };
         });
     }
     login(loginUserDto) {
         return __awaiter(this, void 0, void 0, function* () {
-            const token = yield this.authService.login(loginUserDto);
-            return { token };
+            try {
+                const token = yield this.authService.login(loginUserDto);
+                return { token, message: 'User has been logged in successfully' };
+            }
+            catch (error) {
+                throw new common_1.UnauthorizedException('Login failed');
+            }
         });
     }
 };

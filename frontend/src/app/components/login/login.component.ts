@@ -23,7 +23,12 @@ export class LoginComponent {
     .subscribe(
       (response: any) => {
         console.log(response);
-        this.router.navigate(['/Profile']);
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('user', JSON.stringify(response.user));
+        const user = localStorage.getItem('user')?.toString();
+        if (user) {
+          this.router.navigate(['/profile', user]);
+        }
       },
       (error: any) => {
         console.log(error);

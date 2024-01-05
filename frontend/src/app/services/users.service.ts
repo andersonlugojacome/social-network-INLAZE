@@ -34,7 +34,8 @@ export class UsersService {
     return this.http.delete<Users>(this.BASE_URL + '/users/delete?usersID=' + id);
   }
   loginUser(email: string, password: string): Observable<Users> {
-    return this.http.get<Users>(this.BASE_URL + '/users/login?email=' + email + '&password=' + password);
+    // /auth/login es la ruta que hemos creado en el backend para el login
+    return this.http.post<Users>(this.BASE_URL + '/auth/login', { email, password });
   }
   //register with JWT /auth/register
   registerUser(user: Users): Observable<Users> {

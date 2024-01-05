@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: UsersFormComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:id', component: ProfileComponent},
   { path: 'logout', component: UsersFormComponent },
 
   { path: '', redirectTo: '/posts', pathMatch: 'full' },

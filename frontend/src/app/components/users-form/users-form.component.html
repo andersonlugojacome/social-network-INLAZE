@@ -11,7 +11,7 @@
     <div class="mb-4 text-gray-700 text-sm">
      
       
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="edit ? onEdit(): onSubmit()">
       <div class="mb-4">
         <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre completo:</label>
         <input type="text" id="fullName" name="fullName" [(ngModel)]="user.fullName"
